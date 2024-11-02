@@ -1,0 +1,136 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>
+            {{pagename}}
+        </title>
+        <link rel="apple-touch-icon" sizes="180x180" href={% static 'image/apple-touch-icon.png' %}>
+        <link rel="icon" type="image/png" sizes="32x32" href={% static 'image/favicon-32x32.png'%}>
+        <link rel="icon" type="image/png" sizes="16x16" href={% static 'image/favicon-16x16.png'%}>
+        <link rel="manifest" href={% static 'image/site.webmanifest'%}>
+        <link rel="stylesheet" href={% static 'css/bootstrap.min.css' %}>
+        <link rel="stylesheet" href={% static 'css/style.css'%}>
+    </head>
+    <body>
+
+        <nav class="navbar nvb navbar-expand-sm navbar-white">
+            <div class="container">
+                <a class="navbar-brand" href={% url 'basehome'%}>
+                    <span>&alpha;</span>MDI
+                </a>
+            </div>
+        </nav>
+        <div class="register-container">
+            <div class="login">
+                <h1>Register</h1>
+                <form method="POST">
+                    {% csrf_token %}
+                    <div class="frmfld">
+                        <label>
+                            Username
+                        </label>
+                        <input type="text" name="Username" placeholder="Enter your name" required="">
+                    </div>
+                    <p style="background:none; color:white; font-size:18px; margin-top:5px; margin-bottom:-5px;">{{ch_Failed}}</p>
+                    <div class="frmfld">
+                        <label>
+                            Email
+                        </label>
+                        <input type="email" name="email" placeholder="Email@anything.com" required="">
+                    </div>
+                    <p style="background:none; color:white; font-size:18px; margin-top:5px; margin-bottom:-5px;">{{che_Failed}}</p>
+                    <div class="frmfld">
+                        <label>
+                            Password
+                        </label>
+                        <input type="password" name="Password" placeholder="Enter your account's password" required="">
+                    </div>
+                    <p style="background:none; color:white; font-size:18px; margin-top:5px; margin-bottom:-5px;">{{chp_Failed}}</p>
+                    <div class="frmfld">
+                        <label>
+                            Confirm Password
+                        </label>
+                        <input type="password" name="CheckPassword" placeholder="Rewrite your password" required="">
+                        
+                    </div>
+                    <p style="background:none; color:white; font-size:18px; margin-top:5px; margin-bottom:-5px;">{{check_fail}}</p>
+                    <div class="frmfld">
+                        <label>
+                            Birthdate
+                        </label>
+                        <input type="date" name="date" required="">
+                    </div>
+
+                    <div class="frmfld">
+                        <label>
+                            Gender
+                        </label>
+                        <select name="selected" class="custom-select">
+                            <option selected>Gender...</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                        </select>
+                    </div>
+
+                    <div class="frmfld">
+                        <label>
+                            Phone
+                        </label>
+                        <input type="number" name="phone" placeholder="Enter your phone number" required="">
+                    </div>
+
+                    <div class="checkbox frmfld">
+                        <label>
+                            Doctor
+                        </label>
+                        <input type="checkbox" name="doc_choice" value="checked">
+                        <label>
+                            Engineer
+                        </label>
+                        <input type="checkbox" name="eng_choice" value="checked">
+                    </div>
+
+                    <div class="submit frmfld" style="border-bottom:none;">
+                        <input type="submit" value="submit">
+                    </div>
+                    
+
+
+                </form>    
+            </div>
+        </div>
+        <footer class="py-3 my-4">
+            <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+              <li class="nav-item ">
+                  <a href={% url 'basehome'%} class="nav-link px-2 color-cyan">
+                      Home
+                    </a>
+                </li>
+              <li class="nav-item ">
+                  <a href="{% url 'basehome'%}#services" class="nav-link px-2 color-cyan">
+                      Services
+                    </a>
+                </li>
+              <li class="nav-item ">
+                  <a href="{% url 'basehome'%}#about" class="nav-link px-2 color-cyan">
+                      About Us
+                    </a>
+                </li>
+              <li class="nav-item ">
+                    <a href="{% url 'basehome'%}#contact" class="nav-link px-2 color-cyan">
+                      Contact Us
+                    </a>
+                </li>
+            </ul>
+            <p class="text-center color-cyan">© 2022 Helwan University</p>
+        </footer>
+
+        <script src={% static 'js/popper.min.js' %}></script>
+        <script src={% static 'js/jquery.js' %}></script>
+        <script src={% static 'js/bootstrap.min.js' %}></script>
+        <script src={% static 'js/custom.js' %}></script>
+    </body>
+</html>

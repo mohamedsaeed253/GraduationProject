@@ -1,0 +1,51 @@
+{% extends 'doc_base.html' %}
+{% block content %}
+        <nav class="navbar nvb navbar-expand-sm navbar-white">
+            <div class="container">
+                <a class="navbar-brand" href={% url 'doctor' user.doc_Id%}>
+                    <span>&alpha;</span>MDI
+                </a>
+                <a href="#menu" data-toggle="collapse" class="navbar-toggler">
+                    <span class="navbar-toggler-icon"></span>
+                </a>
+                <div id="menu" class="collapse navbar-collapse">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href={% url 'doctor' user.doc_Id%}>
+                                Home
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href={% url 'doc_services' user.doc_Id%}>
+                                Services
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href={% url 'dis_doc_profile' user.doc_Id%}>
+                                {{user.name|capfirst}}
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href={% url 'basehome'%}>
+                                Log out
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="block"></div>
+        <div class="container">
+            <div style="width:100%;">
+                <div class="d-flex justify-content-between" style="margin-bottom:20px;>
+                    <div class="img-profile">
+                    
+                    </div>
+                    <div class="info_profile">
+                    
+                    </div>
+                </div>
+                <a class="edit" href={% url 'doc_profile' user.name%}>Edit</a>
+            </div>
+        </div>
+{% endblock %}

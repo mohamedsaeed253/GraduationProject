@@ -1,0 +1,96 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>
+            {{pagename}}
+        </title>
+        <link rel="apple-touch-icon" sizes="180x180" href={% static 'image/apple-touch-icon.png' %}>
+        <link rel="icon" type="image/png" sizes="32x32" href={% static 'image/favicon-32x32.png'%}>
+        <link rel="icon" type="image/png" sizes="16x16" href={% static 'image/favicon-16x16.png'%}>
+        <link rel="manifest" href={% static 'image/site.webmanifest'%}>
+        <link rel="stylesheet" href={% static 'css/bootstrap.min.css' %}>
+        <link rel="stylesheet" href={% static 'css/style.css'%}>
+    </head>
+    <body>
+        <nav class="navbar nvb navbar-expand-sm navbar-white">
+            <div class="container">
+                <a class="navbar-brand" href={% url 'basehome'%}>
+                    <span>&alpha;</span>MDI
+                </a>
+                <a href="#menu" data-toggle="collapse" class="navbar-toggler">
+                    <span class="navbar-toggler-icon"></span>
+                </a>
+                <div id="menu" class="collapse navbar-collapse">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#vesion">
+                                Vesion
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#services">
+                                Services
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#about">
+                                About Us
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contact">
+                                Contact Us
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href={% url 'login'%}>
+                                Login
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="d-flex flex-column login-container">
+            <div style="font-size:35px;">
+                Error 404
+            </div>
+            <div style="font-size:25px;">
+                This Page Is Not Found
+            </div>
+        </div>
+        <footer class="py-3 my-4">
+            <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+              <li class="nav-item ">
+                  <a href={% url 'basehome'%} class="nav-link px-2 color-cyan">
+                      Home
+                    </a>
+                </li>
+              <li class="nav-item ">
+                  <a href="{% url 'basehome'%}#services" class="nav-link px-2 color-cyan">
+                      Services
+                    </a>
+                </li>
+              <li class="nav-item ">
+                  <a href="{% url 'basehome'%}#about" class="nav-link px-2 color-cyan">
+                      About Us
+                    </a>
+                </li>
+              <li class="nav-item ">
+                    <a href="{% url 'basehome'%}#contact" class="nav-link px-2 color-cyan">
+                      Contact Us
+                    </a>
+                </li>
+            </ul>
+            <p class="text-center color-cyan">© 2022 Helwan University</p>
+        </footer>
+
+        <script src={% static 'js/popper.min.js' %}></script>
+        <script src={% static 'js/jquery.js' %}></script>
+        <script src={% static 'js/bootstrap.min.js' %}></script>
+        <script src={% static 'js/custom.js' %}></script>
+    </body>
+</html>

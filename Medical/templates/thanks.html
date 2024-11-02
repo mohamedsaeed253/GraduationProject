@@ -1,0 +1,63 @@
+{% extends 'eng_base.html' %}
+
+{% block content %}
+        <nav class="navbar nvb navbar-expand-sm navbar-white">
+            <div class="container">
+                <a class="navbar-brand" href={% url 'engineer' user.eng_Id%}>
+                    <span>&alpha;</span>MDI
+                </a>
+                <a href="#menu" data-toggle="collapse" class="navbar-toggler">
+                    <span class="navbar-toggler-icon"></span>
+                </a>
+                <div id="menu" class="collapse navbar-collapse">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" href={% url 'engineer' user.eng_Id%}>
+                                Home
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href={% url 'eng_services' user.eng_Id%}>
+                                Services
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href={% url 'eng_profile' user.eng_Id%}>
+                                {{user.name|capfirst}}
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href={% url 'basehome'%}>
+                                Log out
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="block"></div>
+        <div class="container">
+            <div class="row mob-view">
+                <div class="col-lg-3 col-md-4 col-sm-5 col services">
+                    <div class="d-flex flex-column align-item-stratch flex-shrink-0">
+                        <header class="font">
+                            The services
+                        </header>
+                        <ul class="list-group list-group-flush border-bottom scrollarea">
+                            <li class="list-group-item">
+                                <a href={% url 'eng_services' user.eng_Id%} class="color-cyan md-font">
+                                    Upload Model
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-9 col-md-8 col-sm-7 col">
+                    <div syle="width:%50; height:50%;" class="d-flex flex-column login-container">
+                        <h1>Thank you for your donation</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+{% endblock %}
